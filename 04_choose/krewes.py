@@ -3,7 +3,10 @@
 # SoftDev
 # K04 -- Python Dictionaries
 # 2024-09-16
-# time spent: 
+# time spent:
+# DISCO: random has a bunch of functions that can be used to generate random stuff
+# QCC: Saw code using "from random import random" which does not work. Whats the difference?
+# OPS SUMMARY: random.randint() can return a random integer from a range, inclusive
 
 import random
 
@@ -24,6 +27,6 @@ krewes = {
 
 def randomStudent():
     key = random.randint(4,5)
-    return krewes[key][random.randint(0, len(krewes[key]))]
+    return krewes[key][random.randint(0, len(krewes[key]) -1)]
 
 print(randomStudent())
