@@ -21,8 +21,8 @@ for student in students:
     if len(student) > 1:
         studentDict[int(student[0])].append([student[1], student[2]])
 
-
+randpd = 4
 randnum = random.randint(0, len(studentDict[4]))
 student = studentDict[4][randnum]
-print(student)
-# print("period: " + student[0] + " name: " + student[1] + " ducky name: " + student[2])
+# print(student)
+print("period: " + randpd + " name: " + student[0] + " ducky name: " + student[1])
