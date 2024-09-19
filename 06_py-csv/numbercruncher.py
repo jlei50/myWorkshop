@@ -4,7 +4,7 @@
 # K06 -- python csv files
 # 2024-09-16
 # time spent:
-# DISCO: 
+# DISCO: We use DictReader to read a csv file into a list? of dictionaries. We then iterate through it to extract values.
 # QCC: 
 # OPS SUMMARY:
 
