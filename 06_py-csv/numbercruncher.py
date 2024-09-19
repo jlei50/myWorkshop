@@ -19,5 +19,8 @@ with open("occupations.csv", newline="") as csvfile:
     for row in reader:
         jobs.append(row['Job Class']), percents.append(float(row['Percentage']))
 
+def ReturnRandom():
 # random.choices returns a list, [:-1] to ignore last row, k is returned list size
-print(random.choices(jobs[:-1], weights=percents[:-1], k=1)[0])
+    return (random.choices(jobs[:-1], weights=percents[:-1], k=1)[0])
+
+print(ReturnRandom())
