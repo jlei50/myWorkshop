@@ -10,7 +10,7 @@
 
 import random
 
-f = open("krewes.txt", "r")
+f = open("krewess.txt", "r")
 raw = f.read()
 students = raw.split("@@@")
 
@@ -21,8 +21,8 @@ for student in students:
     if len(student) > 1:
         studentDict[int(student[0])].append([student[1], student[2]])
 
-randpd = 4
-randnum = random.randint(0, len(studentDict[4]))
-student = studentDict[4][randnum]
+randpd = random.choice([4,5])
+# randnum = random.randint(0, len(studentDict[4]))
+student = random.choice(studentDict[randpd])
 # print(student)
-print("period: " + randpd + " name: " + student[0] + " ducky name: " + student[1])
+print("period: " + str(randpd) + " name: " + student[0] + " ducky name: " + student[1])
