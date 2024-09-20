@@ -23,4 +23,14 @@ def ReturnRandom():
 # random.choices returns a list, [:-1] to ignore last row, k is returned list size
     return (random.choices(jobs[:-1], weights=percents[:-1], k=1)[0])
 
+def RandomManual():
+    # find a valid percentage, subtract percents until random <=0 and we can return the corresponding jobs
+    rand = random.random() * percents[-1]
+    for i in range(len(percents)):
+        rand -= percents[i]
+        if rand <= 0:
+            return jobs[i]
+    
+
 print(ReturnRandom())
+print(RandomManual())
