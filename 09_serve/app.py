@@ -35,13 +35,24 @@ def RandomManual():
         if rand <= 0:
             return jobs[i]
 
-app = Flask(__name__)                   
+def htmlOut():
+    output = "\t <ul>"
+    for job in jobs[:-1]:
+        output += "\t \t <li>"
+        output += job
+        output += "</li> \n"
+    output += "\t </ul> \n"
+    return output
+
+
+app = Flask(__name__)        
 
 @app.route("/")                         
 def hello_world():
     print(__name__)                  
-    return RandomManual()           
+    return htmlOut()           
 
+app.debug = True
 app.run()                                
 
 
