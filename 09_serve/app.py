@@ -36,12 +36,14 @@ def RandomManual():
             return jobs[i]
 
 def htmlOut():
-    output = "\t <ul>"
+    output = "<h1>63</h1>\n"
+    output += "<p>Period 4</p>\n"
+    output += "<ul>"
     for job in jobs[:-1]:
-        output += "\t \t <li>"
+        output += "\t <li>"
         output += job
         output += "</li> \n"
-    output += "\t </ul> \n"
+    output += "</ul> \n"
     return output
 
 
