@@ -3,7 +3,7 @@
 # SoftDev
 # K09 -- Serve
 # 2024-09-23
-# v3 app.debug = true
+# v3 app.debug = true, finaly we see the __name__
 
 from flask import Flask
 app = Flask(__name__)                 #create instance of class Flask
