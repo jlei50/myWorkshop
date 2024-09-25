@@ -37,16 +37,19 @@ def RandomManual():
             return jobs[i]
 
 def htmlOut():
-    output = "<h1>63</h1>\n"
-    output += "<p>Period 4</p>\n"
-    output += "<p>Random: " + RandomManual() + "</p>\n"
-    output += "<p>List of jobs:</p>\n"
-    output += "<ul>"
+    output = "<head><title>O9_serve</title></head>"
+    output += "<body>"
+    output += "\t <h1>63</h1>\n"
+    output += "\t <p>Period 4</p>\n"
+    output += "\t <p>Random: " + RandomManual() + "</p>\n"
+    output += "\t <p>List of jobs:</p>\n"
+    output += "\t <ul>"
     for job in jobs[:-1]:
-        output += "\t <li>"
+        output += "\t \t <li>"
         output += job
         output += "</li> \n"
-    output += "</ul> \n"
+    output += "\t </ul> \n"
+    output += "</body>"
     return output
 
 
