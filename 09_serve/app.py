@@ -26,7 +26,8 @@ with open("occupations.csv", newline="") as csvfile:
     percents = []
     for row in reader:
         jobs.append(row['Job Class']), percents.append(float(row['Percentage']))
-        
+csvfile.close()
+    
 def RandomManual():
     # find a valid percentage, subtract percents until random <=0 and we can return the corresponding jobs
     rand = random.random() * percents[-1]
@@ -38,6 +39,8 @@ def RandomManual():
 def htmlOut():
     output = "<h1>63</h1>\n"
     output += "<p>Period 4</p>\n"
+    output += "<p>Random: " + RandomManual() + "</p>\n"
+    output += "<p>List of jobs:</p>\n"
     output += "<ul>"
     for job in jobs[:-1]:
         output += "\t <li>"
@@ -54,7 +57,7 @@ def hello_world():
     print(__name__)                  
     return htmlOut()           
 
-app.debug = True
+app.debug = True # also makes it so I don't have to reload the code every time.
 app.run()                                
 
 
