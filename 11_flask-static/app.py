@@ -6,7 +6,6 @@
 # basics of /static folder
 import random
 from flask import Flask
-from flask import render_template
 app = Flask(__name__)
 
 @app.route("/")
@@ -22,8 +21,12 @@ def h():
     print(__name__)
    # return render_template('fixie.html')
     return str(random.random())
+
+overwrites the foo.html in static
 '''
-# overwrites the foo.html in static
+@app.route("/static/foo")
+def h():
+    return foo
 
 
 if __name__ == "__main__":  # true if this file NOT imported
