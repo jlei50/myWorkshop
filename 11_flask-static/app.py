@@ -26,7 +26,9 @@ overwrites the foo.html in static
 '''
 @app.route("/static/foo")
 def h():
-    return foo
+    with open('static/foo', "r") as f:
+        content = f.read()
+    return content
 
 
 if __name__ == "__main__":  # true if this file NOT imported

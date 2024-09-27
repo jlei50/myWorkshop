@@ -5,7 +5,7 @@ Q: What happens when you access this file
       http://localhost:5000/static/foo 
      ?
      
-Needs to be foo.html or it just downloads foo.
+It just downloads foo.
 
 NOTA BENE:
  Keep yourself honest by
