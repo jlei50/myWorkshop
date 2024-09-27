@@ -6,7 +6,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Q0:
 then the render_template function would not be imported, and could
-not be used.
+not be used. There is eventually an error
 
 Q1:
 http://127.0.0.1:5000/my_foist_template
@@ -30,7 +30,7 @@ QCC/DISCO:
 # Q0: What will happen if you remove render_template from the following statement?
 # (log prediction before executing...)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from flask import Flask, render_template
+from flask import Flask
 app = Flask(__name__)
 
 @app.route("/")
