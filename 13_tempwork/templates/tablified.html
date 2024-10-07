@@ -10,13 +10,18 @@
 
   <head>
     <title> 45:Occupations </title>
+    <style>
+    table, th, td {
+      border: 1px solid black;
+    }
+    </style>
   </head>
 
   <body>
     <h1> Jady Lei: Team 45: SoftDev Pd 4</h1>
     <h2> random: {{ foo }} </h2>
     <table>
-    <tr> <th> Jobs </th> <th> Percents </th> <th>Link</th>> </tr>
+    <tr> <th> Jobs </th> <th> Percents </th> <th>Link</th> </tr>
     {% for job in coll %}
         <tr>
              <td>{{ job['Job Class'] }}</td>
@@ -25,6 +30,7 @@
         </tr>
     {% endfor %}
     </table>
+    <br>
     {% set myList = ['', '?theme=clean', '?theme=dark', '?theme=hotdog'] %}
     {% set rand = range(0, 4) | random %}
     {% set link = 'https://stackoverflow.com/users/flair/27381974.png' %}
