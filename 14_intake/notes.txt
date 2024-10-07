@@ -1,0 +1,26 @@
+Jady Lei
+31
+SoftDev
+October 7 2024
+
+DISCO:
+* html Does! have a form action thing for like buttons and stuff
+* form leads to /auth
+* username is in the html and therefore can't be called before it's made in the form
+* the link is now /auth?username={{username}}&sub1=Submit+Query
+-----------------------------------------------------------------------
+
+
+Q/C/C:
+* What exactly does the request from flask do?
+* Why do I need to access the headers?
+* did enabling methods=['GET', 'POST']) do anything?
+* wouldn't testmod0 not work because its imported?
+-----------------------------------------------------------------------
+
+
+OTHER?
+* 
+* 
+* 
+-----------------------------------------------------------------------
