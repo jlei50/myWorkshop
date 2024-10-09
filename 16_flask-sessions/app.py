@@ -11,55 +11,30 @@
 from flask import Flask             #facilitate flask webserving
 from flask import render_template   #facilitate jinja templating
 from flask import request           #facilitate form submission
+from flask import make_response
 
 #the conventional way:
 #from flask import Flask, render_template, request
 
 app = Flask(__name__)    #create Flask object
 
-
-'''
-trioTASK:
-~~~~~~~~~~~ BEFORE RUNNING THIS, ~~~~~~~~~~~~~~~~~~
-...read for understanding all of the code below.
- * Some will work as written;
- *  ...other sections will not. 
-
-TASK:
- Predict which.
- 1. Devise simple tests to isolate components/behaviors.
- 2. Execute your tests.
- 3. Process results.
- 4. Findings yield new ideas for more tests? Yes: do them.
-
-PROTIP: Insert your own in-line comments
- wherever they will help
-  your future self and/or current teammates
-   understand what is going on.
-'''
-
-@app.route("/", methods=['GET'])
+@app.route("/", methods=['GET', 'POST'])
 def disp_loginpage():
-    print("\n\n\n")
-    print("***DIAG: this Flask obj ***")
-    print(app)
+    
     return render_template( 'login.html' )
 
 
-@app.route("/auth", methods=['GET'])
+@app.route("/auth", methods=['POST'])
 def authenticate():
-    print("\n\n\n")
-    print("***DIAG: this Flask obj ***")
-    print(app)
-    print("***DIAG: request obj ***")
-    print(request)
-    print("***DIAG: request.args ***")
-    print(request.args)
-#     print("***DIAG: request.headers ***")
-#     print(request.headers)
-    return render_template( 'response.html' , foo = request.args['username'])  #response to a form submission
+    user = request.form['username']
+    resp = make_response(render_template( 'response.html' , foo = request.form['username']))
+    resp.set_cookie('userID', user)
+    return resp
 
-
+@app.route("/logout", methods=['GET'])
+def logout():
+    name = request.cookies.get('userID')
+    return render_template( 'logout.html' , foo = name)
     
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
