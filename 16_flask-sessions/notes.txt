@@ -1,0 +1,19 @@
+Jady Lei
+31
+SoftDev
+October 9 2024
+
+DISCO:
+* request.cookies.get('username') will not throw a Key error
+* session object works like a dictionary.
+-----------------------------------------------------------------------
+
+
+Q/C/C:
+* 
+-----------------------------------------------------------------------
+
+
+Plan of Action:
+* request.cookies.get(KEY)
+-----------------------------------------------------------------------
