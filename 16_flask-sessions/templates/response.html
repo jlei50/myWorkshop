@@ -12,6 +12,17 @@
 
   <head>
     <title> RESPONSE PAGE </title>
+    <style>
+      body{
+        background-color: #27242b;
+        padding: 25%;
+        color: white;
+        font-family: 'Courier New', monospace;
+      }
+      hr{
+        color: white;
+      }
+    </style>
   </head>
 
   <body>
@@ -20,7 +31,7 @@
     </h1>
     <p> Request Method: GET </p>
     <p> Username: {{ foo }} </p>
-    <br>
+    <hr>
     <p> GET: more simple, less secure, used by default </p>
     <p> POST: has to be called specifically, a bit more secure, not actually secure<\p>
       <form action="/logout">
