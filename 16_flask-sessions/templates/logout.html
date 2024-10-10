@@ -11,11 +11,11 @@
 <html>
 
   <head>
-    <title> RESPONSE PAGE </title>
+    <title> LOGOUT PAGE </title>
     <style>
       body{
         background-color: #27242b;
-        padding: 25%;
+        padding: 10%;
         color: white;
         font-family: 'Courier New', monospace;
       }
@@ -30,6 +30,10 @@
       HELLO 
     </h1>
     <h1>welcome back {{ foo }}</h1>
+    
+    <form action="http://127.0.0.1:5000/">
+      <input type="submit" value="logout?">
+    </form>
     <hr>
     <p> Team 45: Jady, Brian, Dua </p>
   </body>

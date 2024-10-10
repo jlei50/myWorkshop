@@ -8,33 +8,46 @@
 # ...then pip installs (eg Flask)
 # ...then your own home-rolled modules/packages (today's test module)
 
-from flask import Flask             #facilitate flask webserving
+from flask import Flask, redirect             #facilitate flask webserving
 from flask import render_template   #facilitate jinja templating
 from flask import request           #facilitate form submission
 from flask import make_response
+from flask import session, url_for
 
 #the conventional way:
 #from flask import Flask, render_template, request
 
 app = Flask(__name__)    #create Flask object
 
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+
 @app.route("/", methods=['GET', 'POST'])
 def disp_loginpage():
-    
-    return render_template( 'login.html' )
+    if 'username' in session:
+        rp = "Logged in as " + session['username']
+        rp += "<br><form action='/logout'>"
+        rp += "<input type='submit' value='logout?'>"
+        rp += "</form>"
+    else:
+        rp = "Login?"
+        rp += "<h3>Enter your username below to proceed.</h3>"
+        rp += "<form action='/auth'>"
+        rp += "<input type='submit' value='==>'>"
+        rp += "</form>"
+    return render_template( 'login.html', foo = rp )
 
 
-@app.route("/auth", methods=['POST'])
+@app.route("/auth", methods=['GET', 'POST'])
 def authenticate():
-    user = request.form['username']
-    resp = make_response(render_template( 'response.html' , foo = request.form['username']))
-    resp.set_cookie('userID', user)
-    return resp
+    if request.method == 'POST':
+        session['username'] = request.form['username']
+        return redirect(url_for("disp_loginpage"))
+    return make_response(render_template( 'response.html' ))
 
 @app.route("/logout", methods=['GET'])
 def logout():
-    name = request.cookies.get('userID')
-    return render_template( 'logout.html' , foo = name)
+    session.pop('username', None)
+    return redirect(url_for("disp_loginpage"))
     
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified

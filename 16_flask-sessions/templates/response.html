@@ -15,7 +15,7 @@
     <style>
       body{
         background-color: #27242b;
-        padding: 25%;
+        padding: 10%;
         color: white;
         font-family: 'Courier New', monospace;
       }
@@ -30,15 +30,15 @@
       HELLO 
     </h1>
     <p> Request Method: POST </p>
-    <p> Username: {{ foo }} </p>
     <hr>
     <p> GET: more simple, less secure, used by default </p>
     <p> POST: has to be called specifically, a bit more secure, not actually secure</p>
-      <form action="/logout">
-        <input type="submit" value="logout?">
-      </form>
-      <hr>
-        <p> Team 31+e: Jady, Brian, Emissary </p>
+    <form action="/auth" method="POST">
+      <input type="text" name="username">
+      <input type="submit" name="sub1">
+    </form>
+    <hr>
+    <p> Team 45: Jady, Brian, Dua </p>
   </body>
 
 </html>
