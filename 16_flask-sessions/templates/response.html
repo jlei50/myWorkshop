@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- 
+<!--
     Jady Lei
     31
     SoftDev
     October 9 2024
-    
+
  -->
 
 
@@ -22,12 +22,18 @@
       hr{
         color: white;
       }
+      input[type=submit]{
+        font-family: 'Courier New', monospace
+        color: #27242b;
+        background-color: white;
+        border: none;
+      }
     </style>
   </head>
 
   <body>
     <h1>
-      HELLO 
+      HELLO
     </h1>
     <p> Request Method: POST </p>
     <hr>
@@ -35,7 +41,7 @@
     <p> POST: has to be called specifically, a bit more secure, not actually secure</p>
     <form action="/auth" method="POST">
       <input type="text" name="username">
-      <input type="submit" name="sub1">
+      <input type="submit" name="sub1" value=submit>
     </form>
     <hr>
     <p> Team 45: Jady, Brian, Dua </p>
