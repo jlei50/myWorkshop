@@ -12,30 +12,13 @@
 
   <head>
     <title> LOGIN PAGE </title>
-    <style>
-      body{
-        background-color: #27242b;
-        padding: 10%;
-        color: white;
-        font-family: 'Courier New', monospace;
-      }
-      hr{
-        color: white;
-      }
-      input[type=submit]{
-        font-family: 'Courier New', monospace
-        color: #27242b;
-        background-color: white;
-        border: none;
-      }
-    </style>
   </head>
 
   <body>
     <h1>
       Howdy, friend!
     </h1>
-
+    {% set notLoggedIn = "" %}
     {{foo | safe}}
 
     <br>

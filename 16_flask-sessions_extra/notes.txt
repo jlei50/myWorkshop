@@ -1,0 +1,27 @@
+Jady Lei
+31
+SoftDev
+October 9 2024
+
+DISCO:
+* request.cookies.get('username') will not throw a Key error
+* sessions "remember" users per request?
+* session is maintained by server but stored in cookies on client.
+* session object works like a dictionary.
+* cookies are securely signed, can be viewed by strangers but hopefully not changed by strangers.
+* utl/__init__.py flags a dir as a package dir
+-----------------------------------------------------------------------
+
+
+Q/C/C:
+* what does encoded payload mean?
+-----------------------------------------------------------------------
+
+
+Plan of Action:
+* request.cookies.get(KEY)
+* import os
+* app.secret_key = os.random(32)
+* from flask import session* session[key] = value
+* session.pop(key)
+-----------------------------------------------------------------------
