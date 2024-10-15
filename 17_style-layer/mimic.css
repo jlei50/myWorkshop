@@ -1,0 +1,23 @@
+body {
+  background-color: gray;
+}
+h1 {
+  background-color: #b0b0b0;
+  color: white;
+  font-weight:bold;
+}
+h4 {
+  font-weight: bold;
+}
+a {
+  font-weight: bold;
+}
+h2 {
+  font-weight: bold;
+}
+.nav {
+  width: 20%;
+}
+.main{
+  width: 30%;
+}
