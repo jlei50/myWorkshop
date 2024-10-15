@@ -1,23 +1,40 @@
 body {
-  background-color: gray;
+  background-color: #767676;
+  font-family:Arial, Helvetica, sans-serif;
+  padding:10px;
 }
 h1 {
-  background-color: #b0b0b0;
+  background-color: #bebebe;
   color: white;
+  text-align: center;
   font-weight:bold;
+  height: 10%;
 }
-h4 {
+h3 {
   font-weight: bold;
 }
 a {
+  font-weight: bold;
+  color: white;
   font-weight: bold;
 }
 h2 {
   font-weight: bold;
 }
 .nav {
+  height: 100%;
   width: 20%;
+  vertical-align: top;
+  position: fixed;
 }
 .main{
-  width: 30%;
+  margin-left: 20%;
+  clear:both;
+}
+#credit{
+  background-color: #565656;
+  color: #767676;
+  text-align: end;
+  padding: 10px;
+  height: 10%;
 }
