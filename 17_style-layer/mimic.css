@@ -22,14 +22,11 @@ h2 {
   font-weight: bold;
 }
 .nav {
-  height: 100%;
-  width: 20%;
+  width: 25%;
   vertical-align: top;
-  position: fixed;
 }
 .main{
-  margin-left: 20%;
-  clear:both;
+
 }
 #credit{
   background-color: #565656;
