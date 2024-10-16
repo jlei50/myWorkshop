@@ -12,7 +12,45 @@
 
   <head>
     <title> INLINE MIMIC </title>
-    <style></style>
+    <style>
+      body {
+        background-color: #767676;
+        font-family:Arial, Helvetica, sans-serif;
+        padding:10px;
+      }
+      h1 {
+        background-color: #bebebe;
+        color: white;
+        text-align: center;
+        font-weight:bold;
+        height: 10%;
+      }
+      h3 {
+        font-weight: bold;
+      }
+      a {
+        font-weight: bold;
+        color: white;
+        font-weight: bold;
+      }
+      h2 {
+        font-weight: bold;
+      }
+      .nav {
+        width: 25%;
+        vertical-align: top;
+      }
+      .main{
+
+      }
+      #credit{
+        background-color: #565656;
+        color: #767676;
+        text-align: end;
+        padding: 10px;
+        height: 10%;
+      }
+    </style>
   </head>
 
   <body>
@@ -20,17 +58,20 @@
       h1 foo
     </h1>
 
-    <div class="nav">
-        <h4>nav foo</h4>
-        <a href ="">dis</a><br>
-        <a href ="">dat</a><br>
-        <a href ="">de udda ting</a>
-    </div>
-    <div class ="main">
-        <h2>main foo heading</h2>
-        <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Primis auctor sapien nunc platea augue fringilla aliquam sed ridiculus. Ridiculus tincidunt iaculis eu proin; orci scelerisque vestibulum pretium. Aadipiscing phasellus in maximus gravida. Tempor magna eros aptent imperdiet dignissim lacinia sociosqu mollis. Est proin ut integer tincidunt auctor pretium primis in. Fermentum pellentesque urna turpis ligula nisl. Ridiculus porttitor id cursus non enim.
-          Placerat nostra netus pellentesque enim tempor potenti justo rhoncus tempus. Semper nascetur ut bibendum varius gravida odio egestas aenean. Et convallis tellus sit turpis facilisis lectus amet auctor. Arcu ad nec per vulputate mollis velit. Iaculis arcu odio porttitor non suscipit maecenas dignissim sodales sed. Cursus cursus sagittis est efficitur dis eget elit.</p>
-    </div>
+    <table>
+      <tr>
+        <td class="nav">
+            <h3>nav foo</h3>
+            <a href ="">dis</a><br>
+            <a href ="">dat</a><br>
+            <a href ="">de udda ting</a>
+        </td>
+        <td class="main">
+            <h2>main foo heading</h2>
+            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Primis auctor sapien nunc platea augue fringilla aliquam sed ridiculus. Ridiculus tincidunt iaculis eu proin; orci scelerisque vestibulum pretium. Aadipiscing phasellus in maximus gravida. Tempor magna eros aptent imperdiet dignissim lacinia sociosqu mollis. Est proin ut integer tincidunt auctor pretium primis in. Fermentum pellentesque urna turpis ligula nisl. Ridiculus porttitor id cursus non enim. <br> <br> Placerat nostra netus pellentesque enim tempor potenti justo rhoncus tempus. Semper nascetur ut bibendum varius gravida odio egestas aenean. Et convallis tellus sit turpis facilisis lectus amet auctor. Arcu ad nec per vulputate mollis velit. Iaculis arcu odio porttitor non suscipit maecenas dignissim sodales sed. Cursus cursus sagittis est efficitur dis eget elit.</p>
+        </td>
+      </tr>
+    </table>
 
     <p id="credit"> Team 45: Jady, Brian, Dua </p>
   </body>
