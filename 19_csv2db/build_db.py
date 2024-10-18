@@ -13,32 +13,37 @@ db = sqlite3.connect(DB_FILE)
 c = db.cursor() #facilitate db ops
 
 c.execute("DROP TABLE courses")
-db.commit()
-# c.execute("DROP TABLE students")
+c.execute("DROP TABLE students")
 
 command = "CREATE TABLE courses(code, mark, id)"
 c.execute(command)
-db.commit()
 with open("courses.csv", newline="") as csvfile:
     #creates a dictionary for every row that can be parsed through
     coursesRaw = csv.DictReader(csvfile)
     for course in coursesRaw:
-        command = f"INSERT INTO courses VALUES ({course['code']}, {course['mark']}, {course['id']})"
+        command = f"INSERT INTO courses VALUES (?,?,?)"
         # {course['code']}, {course['mark']}, {course['id']}
-#         val = (course['code'], course['mark'], course['id'])
-        c.execute(command)
-        db.commit()
+        val = (course['code'], course['mark'], course['id'])
+        c.execute(command, val)
     
-# command = "CREATE TABLE students (name, age, id)"
-# c.execute(command)
-# with open("students.csv", newline="") as csvfile:
-#     #creates a dictionary for every row that can be parsed through
-#     studentsRaw = csv.DictReader(csvfile)
-#     for student in studentsRaw:
-#         command = f"INSERT INTO students (name, age, id) VALUES (%s, %s, %s)"
-#         val = (student['name'], student['age'], student['id'])
-#         c.execute(command, val)
+command = "CREATE TABLE students (name, age, id)"
+c.execute(command)
+with open("students.csv", newline="") as csvfile:
+    #creates a dictionary for every row that can be parsed through
+    studentsRaw = csv.DictReader(csvfile)
+    for student in studentsRaw:
+        command = f"INSERT INTO students VALUES (?,?,?)"
+        val = (student['name'], student['age'], student['id'])
+        c.execute(command, val)
 
 
 db.commit() #save changes
+for row in c.execute("SELECT id, code FROM courses"):
+        print(row)
+print()
+print()
+print()
+for row in c.execute("SELECT id, name FROM students"):
+        print(row)
+
 db.close()
