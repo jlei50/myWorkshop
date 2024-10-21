@@ -1,1 +1,17 @@
 # Notes:
+Use 
+    .headers on
+    .mode column
+
+Check if table exists with 
+    c.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='courses'").fetchall() == []
+   
+Execute commands with a cursor.
+   You also commit with the cursor.
+   
+To insert values:
+    command = f"INSERT INTO students VALUES (?,?,?)"
+    val = (student['name'], student['age'], student['id'])
+    c.execute(command, val)
+
+
