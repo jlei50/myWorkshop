@@ -1,0 +1,23 @@
+body{
+        background-color: #e4ebf0;
+        color: white;
+        font-family: 'Courier New', monospace;
+}
+
+.sticky-topbar {
+    width: 100%;
+    background-color: white;
+    color: black;
+}
+.top-bar-left {
+    color: #fc862b;
+}
+
+a {
+    color: #ffb570;
+}
+
+.button{
+  background-color: #ffb570;
+  color: white;
+}
