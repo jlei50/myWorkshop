@@ -6,7 +6,7 @@ body{
         background-repeat: no-repeat;
         /* background-size: -1; */
         background-position: center;
-        
+
         font-family: 'Courier New', monospace;
         overflow: hidden;
 }
@@ -37,7 +37,7 @@ a {
 .intro {
     flex: 1;
     padding:5%;
-    padding-top: 10%;
+    padding-top: 7%;
 }
 
 .news-card-title {
@@ -47,7 +47,7 @@ a {
 .news-card-article{
     background-color: #fc862b;
     padding: 50px;
-    padding-bottom: 200px;
+    padding-bottom: 150px;
     border-radius: 20px;
 }
 .news-card-date{
@@ -65,7 +65,7 @@ a {
 .scamming {
     padding: 30px;
     background-color: rgba(252, 134, 43, 0.8);
-    border-radius: 20px;   
+    border-radius: 20px;
 }
 .input {
     color:white
