@@ -1,0 +1,24 @@
+      body{
+        background-color: #27242b;
+        padding: 10%;
+        color: white;
+        font-family: 'Courier New', monospace;
+      }
+      hr{
+        color: white;
+      }
+      input[type=submit]{
+        font-family: 'Courier New', monospace
+        color: #27242b;
+        background-color: white;
+        border: none;
+      }
+
+h2{
+  font-weight: bold;
+  font-size: 16px;
+}
+
+h1{
+  font-weight: bold;
+}
