@@ -1,0 +1,1 @@
+- euclidean's algorithm is cooler than I remember and is the calculation section of the GCD wiki article.
