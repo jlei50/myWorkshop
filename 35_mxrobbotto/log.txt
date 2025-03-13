@@ -1,0 +1,12 @@
+DISCO:
+- need to create a python virtual environment
+- need to install python
+- need to install python-venv
+- pip install flask
+- ah i see now why this required a partner
+
+Q/C/C:
+some areas of interest...
+q0: How many tries did it take to "get it right?"
+q1: Did you catch any errors? If so, how did you notice, and what did you do?
+q2: How similar or different is the bot's output to that of your past self / old team?
