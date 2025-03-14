@@ -2,9 +2,13 @@ DISCO:
 - I had to tell it to initialize the database tables. but after that the database worked fine.
 - I needed to tell it to create a user friendly way of accessing edit.
 - oh cool it just works nicely.
+- i am not taking its sqlite file suggestions
 
 Q/C/C:
 some areas of interest...
 q0: How many tries did it take to "get it right?"
+- the first one was actually a functioning webpage. Every other attempt was just to add another feature.
 q1: Did you catch any errors? If so, how did you notice, and what did you do?
+- it doesn't play well with sql
 q2: How similar or different is the bot's output to that of your past self / old team?
+- well it was definitely faster
