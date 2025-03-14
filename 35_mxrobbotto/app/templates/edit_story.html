@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Edit Story{% endblock %}
+{% block content %}
+<h2>Edit Story</h2>
+<form method="post">
+    <label for="content">Content:</label>
+    <textarea name="content" id="content" rows="10" required>{{ story.latest_update }}</textarea>
+    <button type="submit">Save</button>
+</form>
+{% endblock %}

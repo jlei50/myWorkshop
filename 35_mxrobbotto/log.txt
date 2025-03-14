@@ -1,9 +1,6 @@
 DISCO:
-- need to create a python virtual environment
-- need to install python
-- need to install python-venv
-- pip install flask
-- ah i see now why this required a partner
+- I had to tell it to initialize the database tables. but after that the database worked fine.
+- I needed to tell it to create a user friendly way of accessing edit.
 
 Q/C/C:
 some areas of interest...
