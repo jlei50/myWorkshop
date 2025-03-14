@@ -1,6 +1,7 @@
 DISCO:
 - I had to tell it to initialize the database tables. but after that the database worked fine.
 - I needed to tell it to create a user friendly way of accessing edit.
+- oh cool it just works nicely.
 
 Q/C/C:
 some areas of interest...
