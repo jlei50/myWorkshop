@@ -1,0 +1,111 @@
+- we do not plan to provision domain names
+- this might be too detailed rip
+
+ --- PLAN ----
+- update packages
+    sudo apt update
+- install packages to build python envir
+    sudo apt install python3-pip python3-dev build-essential libssl-dev libffi-dev python3-setuptools
+- installing the python3-venv package
+    sudo apt install python3-venv
+- create and move into a parent directory
+- create a vir envio & activate
+    python3.10 -m venv myprojectenv
+    source myprojectenv/bin/activate
+- pip install wheel, whatever that is
+    pip install wheel
+- install flask and uWSGI
+    pip install uwsgi flask
+- create a sample app
+    nano ~/myproject/myproject.py
+- test the app by allowing access to port 5000
+    sudo ufw allow 5000
+- and test the app again
+  python myproject.py visit with: http://your_server_ip:5000
+- create the WSGI entry point
+  nano ~/myproject/wsgi.py
+- In this file, import the Flask instance from your application and then run it
+from myproject import app
+
+if __name__ == "__main__":
+app.run()
+- test whether uWSGI can serve the app
+    uwsgi --socket 0.0.0.0:5000 --protocol=http -w wsgi:app
+- deactive ur vir envio
+- create a uWSGI Configuration file
+  nano ~/myproject/myproject.ini
+- here, write this
+[uwsgi]
+module = wsgi:app
+- then do this to tell uWSGI to start up in mater mode and spawn 5 worker processes to serve actual requests
+[uwsgi]
+module = wsgi:app
+
+master = true
+processes = 5
+- call the socket myproject.sock and place it in this directory
+[uwsgi]
+module = wsgi:app
+
+master = true
+processes = 5
+
+socket = myproject.sock
+chmod-socket = 660
+vacuum = true
+- set the die-on-term option
+[uwsgi]
+module = wsgi:app
+
+master = true
+processes = 5
+
+socket = myproject.sock
+chmod-socket = 660
+vacuum = true
+
+die-on-term = true
+5. create a systemd unit file
+- create a file in a directory
+sudo nano /etc/systemd/system/myproject.service
+- in that file talk to that init system and maybe other things
+[Unit]
+Description=uWSGI instance to serve myproject
+After=network.target
+
+[Service]
+User=sammy
+Group=www-data
+WorkingDirectory=/home/sammy/myproject
+Environment="PATH=/home/sammy/myproject/myprojectenv/bin"
+ExecStart=/home/sammy/myproject/myprojectenv/bin/uwsgi --ini myproject.ini
+
+[Install]
+WantedBy=multi-user.target
+-change the group associated with your home directory using chgrp
+sudo chgrp www-data /home/sammy
+- state the uWSGI service you created
+sudo systemctl start myproject
+- enable it
+sudo systemctl enable myproject
+- check the status
+sudo systemctl status myproject
+6. confiure nginx to proxy requests
+-create a new server block configuration file
+sudo nano /etc/nginx/sites-available/myproject
+- open a server block and tell nginx to listen to port 70 and also a location block
+server {
+    listen 80;
+    server_name your_domain www.your_domain;
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass unix:/home/sammy/myproject/myproject.sock;
+    }
+}
+- enable that thing you just made
+-restart nginx to read the new Configuration
+-adjust the firewall again
+7. secure the application
+-install certbot and its nginx plugin
+- ong thats it
